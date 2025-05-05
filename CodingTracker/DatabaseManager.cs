@@ -7,7 +7,7 @@ namespace CodingTracker
 {
     internal class DatabaseManager
     {
-        static string connectionString = ConfigurationManager.AppSettings.Get("conString");
+        static readonly string? connectionString = ConfigurationManager.AppSettings.Get("conString");
 
         internal static void CreateTable()
         {
