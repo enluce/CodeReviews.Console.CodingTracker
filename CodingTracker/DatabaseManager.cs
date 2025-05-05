@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Configuration;
+﻿using System.Configuration;
 using CodingTracker.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
@@ -32,7 +31,6 @@ namespace CodingTracker
 
                 return results;
                
-                //Console.WriteLine(results.Start_Time);
             }
         }
         internal static int NonQuery(string command, object parameters = null)

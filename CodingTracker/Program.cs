@@ -3,7 +3,7 @@ using Spectre.Console;
 using static CodingTracker.Enums;
 public static class Program
 {
-    static bool exitApp = false;
+    static bool exitApp;
     public static void Main(string[] args)
     {
         DatabaseManager.CreateTable();

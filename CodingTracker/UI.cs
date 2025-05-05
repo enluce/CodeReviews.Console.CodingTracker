@@ -30,7 +30,7 @@ namespace CodingTracker
                 if (!isEndTimeValid) AnsiConsole.Markup("[red]Invalid![/]\n");
             }
 
-            return new CodingSession(startTime.ToString(), userEndTime.ToString());
+            return new CodingSession(userStartTime, userEndTime);
 
         }
 
@@ -44,7 +44,6 @@ namespace CodingTracker
             table.AddColumn("Start_Time");
             table.AddColumn("End_Time");
             table.AddColumn("Duration");
-            //table.AddColumn(new TableColumn("Bar").Centered());
 
             foreach (CodingSession session in sessions)
             {
@@ -54,7 +53,7 @@ namespace CodingTracker
             AnsiConsole.Write(table);
         }
 
-        public static void Message(string message, Enums.MessageOutcome messageOutcome)
+        public static void WriteMessage(string message, Enums.MessageOutcome messageOutcome)
         {
             Dictionary<Enums.MessageOutcome, string> dict = new()
             {

@@ -23,7 +23,7 @@ namespace CodingTracker
             var command = $"INSERT INTO coding_sessions (date, startTime, endTime, duration) VALUES ('{session.Date}', '{session.StartTime}', '{session.EndTime}', '{session.Duration}')";
             DatabaseManager.NonQuery(command);
 
-            UI.Message("Session added successfully!", Enums.MessageOutcome.Positive);
+            UI.WriteMessage("Session added successfully!", Enums.MessageOutcome.Positive);
 
 
         }
@@ -31,7 +31,7 @@ namespace CodingTracker
         {
             if (DatabaseManager.ContainsRow())
             {
-                UI.Message("No sessions available!", Enums.MessageOutcome.Negative);
+                UI.WriteMessage("No sessions available!", Enums.MessageOutcome.Negative);
                 return;
             }
             ViewSessions();
@@ -42,7 +42,7 @@ namespace CodingTracker
 
             DatabaseManager.NonQuery(command, new { ID = sessionID });
 
-            UI.Message("Session deleted successfully!", Enums.MessageOutcome.Positive);
+            UI.WriteMessage("Session deleted successfully!", Enums.MessageOutcome.Positive);
 
         }
 
@@ -50,7 +50,7 @@ namespace CodingTracker
         {
             if (DatabaseManager.ContainsRow())
             {
-                UI.Message("No sessions available!", Enums.MessageOutcome.Negative);
+                UI.WriteMessage("No sessions available!", Enums.MessageOutcome.Negative);
                 return;
             }
 
