@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using CodingTracker.Models;
+﻿using CodingTracker.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
 
@@ -7,7 +6,7 @@ namespace CodingTracker
 {
     internal class DatabaseManager
     {
-        static readonly string? connectionString = ConfigurationManager.AppSettings.Get("conString");
+        static readonly string? connectionString = System.Configuration.ConfigurationManager.AppSettings.Get("conString");
 
         internal static void CreateTable()
         {
